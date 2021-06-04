@@ -1,0 +1,2 @@
+Lifecycle of Activity:
+OnCreate(), onStart(),  onResume(), onPause(), OnStop(), onRestart(), onDestroy()
