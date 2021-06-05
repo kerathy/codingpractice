@@ -12,44 +12,15 @@ import java.util.Scanner;
 public class HourGlass {
 
     public static void main(String[] args) {
-        System.out.println();
-
-//
-//        int[][] arr =
-//                {
-//                        {1, 1, 1, 0, 0, 0},
-//                        {0, 1, 0, 0, 0, 0},
-//                        {1, 1, 1, 0, 0, 0},
-//                        {0, 0, 0, 0, 0, 0},
-//                        {0, 0, 0, 0, 0, 0},
-//                        {0, 0, 0, 0, 0, 0}
-//
-//                };
-//        int res = maximumSum(arr);
-//        System.out.println(res);
-//
-//
-//            int[][] arr2 = {
-//                    {1, 1, 1, 0, 0, 0},
-//                    {0, 1, 0, 0, 0, 0},
-//                    {1, 1, 1, 0, 0, 0},
-//                    {0, 0, 2, 4, 4, 0},
-//                    {0, 0, 0, 2, 0, 0},
-//                    {0, 0, 1, 2, 4, 0}
-//            };
-//            int res2 = maximumSum(arr2);
-//        System.out.println(res2);
-
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[][] arr3 = new int[n][n];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+//        int n = sc.nextInt();
+        int[][] arr3 = new int[6][6];
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
                 arr3[i][j] = sc.nextInt();
             }
         }
 
-//        System.out.println(Arrays.deepToString(arr3));
         int res3 = maximumSum(arr3);
         System.out.println(res3);
     }
@@ -65,11 +36,10 @@ public class HourGlass {
 //            System.out.println("j:" + (j + 2));
 //        }
 
-
         for (int i = 0; i + 2 < len; i++) {
             for (int j = 0; j + 2 < len; j++) {
                 res += arr[i][j] + arr[i][j + 1] + arr[i][j + 2];
-                res += arr[i + 1][j] + arr[i + 1][j + 1] + arr[i + 1][j + 2];
+                res += arr[i + 1][j + 1];
                 res += arr[i + 2][j] + arr[i + 2][j + 1] + arr[i + 2][j + 2];
                 max = Math.max(res, max);
                 res = 0;

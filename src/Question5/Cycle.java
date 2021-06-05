@@ -13,9 +13,4 @@ public class Cycle {
         System.out.println("Hello I am a motorcycle, I am a cycle with an engine.");
         System.out.println("My ancestor is a cycle who is a vehicle with pedals.");
     }
-
-    public static void main(String[] args) {
-        Motocycle motocycle = new Motocycle();
-        motocycle.func();
-    }
 }

@@ -11,23 +11,19 @@ import java.util.Scanner;
  */
 public class FoodFactory {
 
-    public static void main(String[] args) {
-        System.out.println();
-//        getFood("pizza");
-        Scanner sc = new Scanner(System.in);
-        String str = sc.next();
-        getFood(str);
-    }
-
-    public static Food getFood(String str) {
+    public Food getFood(String str) {
         if (str.equals("cake")) {
-            System.out.println("The factory returned class Cake");
-            System.out.println("Someone ordered a Dessert!");
-            return new Cake();
+            Food food = new Cake();
+            String type = food.getType();
+            System.out.println("The factory returned class " + food.getClass().getName().split("\\.")[1]);
+            System.out.println(type);
+            return food;
         } else if (str.equals("pizza")){
-            System.out.println("The factory returned class Pizza");
-            System.out.println("Someone ordered Fast Food!");
-            return new Pizza();
+            Food food = new Pizza();
+            String type = food.getType();
+            System.out.println("The factory returned class " + food.getClass().getName().split("\\.")[1]);
+            System.out.println(type);
+            return food;
         }
         return null;
     }

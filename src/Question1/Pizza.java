@@ -9,7 +9,7 @@ package Question1;
  */
 public class Pizza implements Food{
     @Override
-    public void getType() {
-
+    public String getType() {
+        return "Someone ordered Fast Food!";
     }
 }

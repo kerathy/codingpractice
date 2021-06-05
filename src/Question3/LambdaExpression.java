@@ -46,17 +46,9 @@ public class LambdaExpression {
         return "Prime";
     }
 
-    public static String isPalindrome(int n) {
-//        StringBuilder sb = new StringBuilder();
-//
-//        String newStr = new StringBuffer().append(String.valueOf(n).toCharArray()).reverse().toString();
-//        System.out.println(newStr);
-        return (new StringBuffer().append(String.valueOf(n).toCharArray()).reverse().toString()).equals(String.valueOf(n)) ? "isPalindrome" : "";
-//        for (int i = chars.length - 1; i >= 0; i--) {
-//            sb.append(chars[i]);
-//        }
-//        return original.equals(sb.toString()) ? "isPalindrome" : "";
 
-//        return newStr.equals(String.valueOf(n)) ? "isPalindrome" : "";
+
+    public static String isPalindrome(int n) {
+        return (new StringBuffer().append(String.valueOf(n).toCharArray()).reverse().toString()).equals(String.valueOf(n)) ? "isPalindrome" : "";
     }
 }

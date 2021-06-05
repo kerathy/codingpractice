@@ -8,6 +8,5 @@ package Question1;
  * @create 6/4/21 10:03 AM
  */
 public interface Food {
-
-    void getType();
+    public String getType();
 }

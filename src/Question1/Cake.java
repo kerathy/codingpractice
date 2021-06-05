@@ -9,7 +9,7 @@ package Question1;
  */
 public class Cake implements Food{
     @Override
-    public void getType() {
-
+    public String getType() {
+        return "Someone ordered a Dessert!";
     }
 }

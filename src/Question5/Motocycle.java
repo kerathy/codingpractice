@@ -9,4 +9,7 @@ package Question5;
  */
 public class Motocycle extends Cycle{
 
+    public Motocycle() {
+        super.func();
+    }
 }

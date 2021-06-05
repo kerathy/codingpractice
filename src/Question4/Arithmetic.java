@@ -1,5 +1,8 @@
 package Question4;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
  * @Title: Arithmetic
  * @Description: Practice
@@ -18,16 +21,23 @@ public class Arithmetic {
     }
 
     public static void main(String[] args) {
-//        Arithmetic arithmetic = new Arithmetic();
         Adder adder = new Adder();
-        int[] nums = {1, 2, 3};
-        if (adder instanceof Adder) {
-            System.out.println("My superclass is: Arithmetic");
-            for (int i = 0; i < nums.length; i++) {
-                System.out.print(nums[i] + " ");
-            }
-        }
-//        System.out.println("sum: " + adder.add(nums));
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
 
+        String res = adder.getClass().getSuperclass().getName();
+        System.out.println("My superclass is: " + res.split("\\.")[1]);
+
+        String strRes = "";
+        for (int i = 0; i < n; i++) {
+            int arrSize = sc.nextInt();
+            int[] nums = new int[arrSize];
+            for (int j = 0; j < nums.length; j++) {
+                nums[j] = sc.nextInt();
+            }
+            int sum = adder.add(nums);
+            strRes += sum + " ";
+        }
+        System.out.println(strRes);
     }
 }
