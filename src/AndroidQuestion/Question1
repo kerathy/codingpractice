@@ -1,1 +1,5 @@
-Fragment is part of Activity. Fragment represents multiple screens inside one activity.
+difference between fragment and activity:
+
+Fragment is part of an activity. That means an activity can have multiple fragments, fragments rely on activity.
+Fragment has its lifecycle, fragment is embedded in the the activity, therefore,
+fragment's life cycle methods are affected by activity's life cycle.

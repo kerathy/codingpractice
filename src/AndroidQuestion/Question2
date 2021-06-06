@@ -1,2 +1,7 @@
-Lifecycle of Activity:
+For lifecycle of activity, there're seven activities, including
 OnCreate(), onStart(),  onResume(), onPause(), OnStop(), onRestart(), onDestroy()
+
+When a activity is invoked, onCreate(), onStart(), onResume() methods are invoked.
+When you press the triangle button, back, onPause(), onStop(), onDestroy() methods are invoked.
+When you press the home button, onPause(), onStop() methods are invoked.
+
