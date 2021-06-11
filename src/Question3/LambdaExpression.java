@@ -1,5 +1,7 @@
 package Question3;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -12,43 +14,38 @@ import java.util.Scanner;
 public class LambdaExpression {
 
     public static void main(String[] args) {
+        List<String> res = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-//        System.out.println(n);
         for (int i = 0; i < n; i++) {
             int a = sc.nextInt();
             int b = sc.nextInt();
-//            System.out.println("a:" + a + "b:" + b);
             if (a == 1) {
-                String res = isOdd(b);
-                System.out.println(res);
+                res.add(checkOperation(LambdaExpression.isOdd(), b) ? "EVEN" : "ODD");
             } else if (a == 2) {
-                String res = isPrime(b);
-                System.out.println(res);
+                res.add(checkOperation(LambdaExpression.isPrime(), b) ? "PRIME" : "COMPOSITE");
             } else if (a == 3) {
-                String res = isPalindrome(b);
-                System.out.println(res);
+                res.add(checkOperation(LambdaExpression.isPalindrome(), b) ? "PALINDROME" : "NOT PALINDROME");
             }
         }
-
-    }
-
-    public static String isOdd(int num) {
-        return num % 2 == 0 ? "EVEN" : "ODD";
-    }
-
-    public static String isPrime(int n) {
-        for (int i = 2; i * i <= n; i++) {
-            if (n % i == 0) {
-                return "COMPOSITE";
-            }
+        for (String str : res) {
+            System.out.println(str);
         }
-        return "Prime";
     }
 
+    public static boolean checkOperation(PerformOperation p, int num) {
+        return p.check(num);
+    }
 
+    public static PerformOperation isOdd() {
+        return n -> n % 2 == 0;
+    }
 
-    public static String isPalindrome(int n) {
-        return (new StringBuffer().append(String.valueOf(n).toCharArray()).reverse().toString()).equals(String.valueOf(n)) ? "isPalindrome" : "";
+    public static PerformOperation isPrime() {
+        return n -> java.math.BigInteger.valueOf(n).isProbablePrime(100);
+    }
+
+    public static PerformOperation isPalindrome() {
+        return  n -> (new StringBuffer().append(String.valueOf(n).toCharArray()).reverse().toString()).equals(String.valueOf(n));
     }
 }
