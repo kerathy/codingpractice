@@ -10,5 +10,5 @@ package Question3;
 
 @FunctionalInterface
 public interface PerformOperation {
-    public boolean check(int num);
+    boolean check(int num);
 }
